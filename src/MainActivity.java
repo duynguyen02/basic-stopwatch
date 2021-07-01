@@ -40,7 +40,7 @@ public class MainActivity extends JFrame implements ActionListener {
     JButton btnStart = new JButton("Start");
     JButton btnStop = new JButton("Stop");
     JButton btnPause = new JButton("Pause");
-    StopWatch stopWatch;
+    StopWatch stopWatch = new StopWatch(timeDisplay);
     boolean isPause = false;
     public MainActivity(){
         super("Stop Watch");
@@ -87,17 +87,15 @@ public class MainActivity extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()==btnStart){
+            stopWatch.terminate();
             if(isPause){
                 isPause = false;
                 stopWatch = new StopWatch(timeDisplay,Integer.parseInt(timeDisplay.getText()));
-                stopWatch.start();
-                btnStart.setEnabled(false);
             }
             else {
                 stopWatch = new StopWatch(timeDisplay);
-                btnStart.setEnabled(false);
-                stopWatch.start();
             }
+            stopWatch.start();
         }
         if (e.getSource()==btnStop){
             stopWatch.terminate();
