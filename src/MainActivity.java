@@ -51,7 +51,6 @@ public class MainActivity extends JFrame implements ActionListener {
         ////////////////////////////////
         setButton();
         setLabel();
-        stopWatch = new StopWatch(timeDisplay);
         ////////////////////////////////
         this.add(btnStop);
         this.add(btnStart);
@@ -95,13 +94,13 @@ public class MainActivity extends JFrame implements ActionListener {
                 btnStart.setEnabled(false);
             }
             else {
+                stopWatch = new StopWatch(timeDisplay);
                 btnStart.setEnabled(false);
                 stopWatch.start();
             }
         }
         if (e.getSource()==btnStop){
             stopWatch.terminate();
-            stopWatch = new StopWatch(timeDisplay);
             btnStart.setEnabled(true);
             timeDisplay.setText("0");
         }
