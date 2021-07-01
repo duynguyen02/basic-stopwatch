@@ -1,2 +1,2 @@
 # basic-stopwatch
-An basic stopwatch appication using JavaSwing with Thread.
+An basic stopwatch appication using JavaSwing.
