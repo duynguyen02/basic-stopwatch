@@ -99,13 +99,11 @@ public class MainActivity extends JFrame implements ActionListener {
         }
         if (e.getSource()==btnStop){
             stopWatch.terminate();
-            btnStart.setEnabled(true);
             timeDisplay.setText("0");
         }
         if (e.getSource()==btnPause){
             isPause = true;
             stopWatch.terminate();
-            btnStart.setEnabled(true);
         }
     }
 }
